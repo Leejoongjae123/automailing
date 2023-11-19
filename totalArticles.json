@@ -1,0 +1,107 @@
+﻿[
+  {
+    "name": "이은정 교수님",
+    "keyword": "Won-Young Lee ",
+    "research": [
+      {
+        "title": "Diuron-induced fetal Leydig cell dysfunction in in vitro organ cultured fetal testes.",
+        "url": "https://pubmed.ncbi.nlm.nih.gov//37949197/",
+        "paper": "Reprod Toxicol. 2023 Nov 9;123:108497. "
+      },
+      {
+        "title": "Nonalcoholic Fatty Liver Disease and the Risk of Thyroid Cancer Among Young Adults in South Korea.",
+        "url": "https://pubmed.ncbi.nlm.nih.gov//37921093/",
+        "paper": "J Clin Endocrinol Metab. 2023 Oct 31:dgad575. "
+      },
+      {
+        "title": "Differential Impact of Obesity on the Risk of Diabetes Development in Two Age Groups: Analysis from the National Health Screening Program.",
+        "url": "https://pubmed.ncbi.nlm.nih.gov//37915188/",
+        "paper": "Diabetes Metab J. 2023 Aug 23. "
+      }
+    ]
+  },
+  {
+    "name": "이은정 교수님",
+    "keyword": "Eun-Jung Rhee",
+    "research": [
+      {
+        "title": "Nonalcoholic Fatty Liver Disease and the Risk of Thyroid Cancer Among Young Adults in South Korea.",
+        "url": "https://pubmed.ncbi.nlm.nih.gov//37921093/",
+        "paper": "J Clin Endocrinol Metab. 2023 Oct 31:dgad575. "
+      },
+      {
+        "title": "Differential Impact of Obesity on the Risk of Diabetes Development in Two Age Groups: Analysis from the National Health Screening Program.",
+        "url": "https://pubmed.ncbi.nlm.nih.gov//37915188/",
+        "paper": "Diabetes Metab J. 2023 Aug 23. "
+      },
+      {
+        "title": "Coronary Artery Calcium Score as a Sensitive Indicator of Cardiovascular Disease in Patients with Type 2 Diabetes Mellitus: A Long-Term Cohort Study.",
+        "url": "https://pubmed.ncbi.nlm.nih.gov//37816500/",
+        "paper": "Endocrinol Metab (Seoul). 2023 Oct;38(5):568-577. "
+      }
+    ]
+  },
+  {
+    "name": "박철영 교수님",
+    "keyword": "Cheol-Young Park",
+    "research": [
+      {
+        "title": "Evaluation of adrenal masses using 18F-FDOPA PET/CT in patients suspected with pheochromocytoma.",
+        "url": "https://pubmed.ncbi.nlm.nih.gov//37901929/",
+        "paper": "Nucl Med Commun. 2023 Oct 30. "
+      },
+      {
+        "title": "Coronary Artery Calcium Score as a Sensitive Indicator of Cardiovascular Disease in Patients with Type 2 Diabetes Mellitus: A Long-Term Cohort Study.",
+        "url": "https://pubmed.ncbi.nlm.nih.gov//37816500/",
+        "paper": "Endocrinol Metab (Seoul). 2023 Oct;38(5):568-577. "
+      },
+      {
+        "title": "Efficacy and Safety of Evogliptin Add-on Therapy to Dapagliflozin/Metformin Combinations in Patients with Poorly Controlled Type 2 Diabetes Mellitus: A 24-Week Multicenter Randomized Placebo-Controlled Parallel-Design Phase-3 Trial with a 28-Week Extension.",
+        "url": "https://pubmed.ncbi.nlm.nih.gov//37750183/",
+        "paper": "Diabetes Metab J. 2023 Sep 26. "
+      }
+    ]
+  },
+  {
+    "name": "박세은 교수님",
+    "keyword": "Se Eun Park",
+    "research": [
+      {
+        "title": "In Vitro Human Monoamine Oxidase Inhibition and Human Dopamine D4 Receptor Antagonist Effect of Natural Flavonoids for Neuroprotection.",
+        "url": "https://pubmed.ncbi.nlm.nih.gov//37958841/",
+        "paper": "Int J Mol Sci. 2023 Nov 1;24(21):15859. "
+      },
+      {
+        "title": "Nonalcoholic Fatty Liver Disease and the Risk of Thyroid Cancer Among Young Adults in South Korea.",
+        "url": "https://pubmed.ncbi.nlm.nih.gov//37921093/",
+        "paper": "J Clin Endocrinol Metab. 2023 Oct 31:dgad575. "
+      },
+      {
+        "title": "A genomic appraisal of invasive Salmonella Typhimurium and associated antibiotic resistance in sub-Saharan Africa.",
+        "url": "https://pubmed.ncbi.nlm.nih.gov//37872141/",
+        "paper": "Nat Commun. 2023 Oct 23;14(1):6392. "
+      }
+    ]
+  },
+  {
+    "name": "문선준 교수님",
+    "keyword": " Sun Joon Moon",
+    "research": [
+      {
+        "title": "Nonalcoholic Fatty Liver Disease and the Risk of Thyroid Cancer Among Young Adults in South Korea.",
+        "url": "https://pubmed.ncbi.nlm.nih.gov//37921093/",
+        "paper": "J Clin Endocrinol Metab. 2023 Oct 31:dgad575. "
+      },
+      {
+        "title": "Coronary Artery Calcium Score as a Sensitive Indicator of Cardiovascular Disease in Patients with Type 2 Diabetes Mellitus: A Long-Term Cohort Study.",
+        "url": "https://pubmed.ncbi.nlm.nih.gov//37816500/",
+        "paper": "Endocrinol Metab (Seoul). 2023 Oct;38(5):568-577. "
+      },
+      {
+        "title": "Risk of Diabetic Retinopathy between Sodium-Glucose Cotransporter-2 Inhibitors and Glucagon-Like Peptide-1 Receptor Agonists (Diabetes Metab J 2023;47:394-404).",
+        "url": "https://pubmed.ncbi.nlm.nih.gov//37533199/",
+        "paper": "Diabetes Metab J. 2023 Jul;47(4):571-572. "
+      }
+    ]
+  }
+]
