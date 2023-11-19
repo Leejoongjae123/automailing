@@ -1,0 +1,9 @@
+smtplib
+email
+datetime
+time
+random
+requests
+bs4
+gspread
+oauth2client

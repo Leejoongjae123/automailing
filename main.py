@@ -725,109 +725,122 @@ def GetGoogleSpreadSheet():
     return all_data
 
 
-#=========구글시트정보가져오기
-spreadDatas=GetGoogleSpreadSheet()
+def DoRun():
+    #=========구글시트정보가져오기
+    spreadDatas=GetGoogleSpreadSheet()
+    for spreadData in spreadDatas:
+        newsList = []
+        pubmedList = []
+        try:
+            naverName1={'name':spreadData['교수님1(네이버)'],'keyword':spreadData['검색어1(네이버)'],}
+        except:
+            naverName1=""
+        print("naverName1:",naverName1)
+        if len(naverName1['name'])>=1:
+            newsList.append(naverName1)
+        try:
+            naverName2={'name':spreadData['교수님2(네이버)'],'keyword':spreadData['검색어2(네이버)'],}
+        except:
+            naverName2=""
+        print("naverName2:",naverName2)
+        if len(naverName2['name'])>=1:
+            newsList.append(naverName2)
+        try:
+            naverName3={'name':spreadData['교수님3(네이버)'],'keyword':spreadData['검색어3(네이버)'],}
+        except:
+            naverName3=""
+        print("naverName3:",naverName3)
+        if len(naverName3['name'])>=1:
+            newsList.append(naverName3)
+        try:
+            naverName4={'name':spreadData['교수님4(네이버)'],'keyword':spreadData['검색어4(네이버)'],}
+        except:
+            naverName4=""
+        print("naverName4:",naverName4)
+        if len(naverName4['name'])>=1:
+            newsList.append(naverName4)
+        try:
+            naverName5={'name':spreadData['교수님5(네이버)'],'keyword':spreadData['검색어5(네이버)'],}
+        except:
+            naverName5=""
+        print("naverName5:",naverName5)
+        if len(naverName5['name'])>=1:
+            newsList.append(naverName5)
 
 
-for spreadData in spreadDatas:
-    newsList = []
-    pubmedList = []
-    try:
-        naverName1={'name':spreadData['교수님1(네이버)'],'keyword':spreadData['검색어1(네이버)'],}
-    except:
-        naverName1=""
-    print("naverName1:",naverName1)
-    if len(naverName1['name'])>=1:
-        newsList.append(naverName1)
-    try:
-        naverName2={'name':spreadData['교수님2(네이버)'],'keyword':spreadData['검색어2(네이버)'],}
-    except:
-        naverName2=""
-    print("naverName2:",naverName2)
-    if len(naverName2['name'])>=1:
-        newsList.append(naverName2)
-    try:
-        naverName3={'name':spreadData['교수님3(네이버)'],'keyword':spreadData['검색어3(네이버)'],}
-    except:
-        naverName3=""
-    print("naverName3:",naverName3)
-    if len(naverName3['name'])>=1:
-        newsList.append(naverName3)
-    try:
-        naverName4={'name':spreadData['교수님4(네이버)'],'keyword':spreadData['검색어4(네이버)'],}
-    except:
-        naverName4=""
-    print("naverName4:",naverName4)
-    if len(naverName4['name'])>=1:
-        newsList.append(naverName4)
-    try:
-        naverName5={'name':spreadData['교수님5(네이버)'],'keyword':spreadData['검색어5(네이버)'],}
-    except:
-        naverName5=""
-    print("naverName5:",naverName5)
-    if len(naverName5['name'])>=1:
-        newsList.append(naverName5)
+        try:
+            pubmedName1={'name':spreadData['교수님1(네이버)'],'keyword':spreadData['검색어1(PUBMED)'],}
+        except:
+            pubmedName1=""
+        print("pubmedName1:",pubmedName1)
+        if len(pubmedName1['name'])>=1:
+            pubmedList.append(pubmedName1)
+        try:
+            pubmedName2={'name':spreadData['교수님2(PUBMED)'],'keyword':spreadData['검색어2(PUBMED)'],}
+        except:
+            pubmedName2=""
+        print("pubmedName2:",pubmedName2)
+        if len(pubmedName2['name'])>=1:
+            pubmedList.append(pubmedName2)
+        try:
+            pubmedName3={'name':spreadData['교수님3(PUBMED)'],'keyword':spreadData['검색어3(PUBMED)'],}
+        except:
+            pubmedName3=""
+        print("pubmedName3:",pubmedName3)
+        if len(pubmedName3['name'])>=1:
+            pubmedList.append(pubmedName3)
+        try:
+            pubmedName4={'name':spreadData['교수님4(PUBMED)'],'keyword':spreadData['검색어4(PUBMED)'],}
+        except:
+            pubmedName4=""
+        print("pubmedName4:",pubmedName4)
+        if len(pubmedName4['name'])>=1:
+            pubmedList.append(pubmedName4)
+        try:
+            pubmedName5={'name':spreadData['교수님5(PUBMED)'],'keyword':spreadData['검색어5(PUBMED)'],}
+        except:
+            pubmedName5=""
+        print("pubmedName5:",pubmedName5)
+        if len(pubmedName5['name'])>=1:
+            pubmedList.append(pubmedName5)
+
+        totalNews=[]
+        #========뉴스랑 펍메드가져오기
+        for index,inputNews in enumerate(newsList):
+            newsList=GetNews(inputNews)
+            text="{}번째 확인중...".format(index+1)
+            print(text)
+            totalNews.append(newsList)
+            time.sleep(random.randint(10,20)*0.1)
+        totalArticles=[]
+        for index,inputPubmed in enumerate(pubmedList):
+            articleList=GetArticlesPubMed(inputPubmed)
+            text = "{}번째 확인중...".format(index+1)
+            print(text)
+            totalArticles.append(articleList)
+            time.sleep(random.randint(10, 20) * 0.1)
+        with open('totalNews.json', 'w',encoding='utf-8-sig') as f:
+            json.dump(totalNews, f, indent=2,ensure_ascii=False)
+        with open('totalArticles.json', 'w',encoding='utf-8-sig') as f:
+            json.dump(totalArticles, f, indent=2,ensure_ascii=False)
+
+        #==========메일보내기
+        with open ('totalNews.json', "r",encoding='utf-8-sig') as f:
+            totalNews = json.load(f)
+        with open ('totalArticles.json', "r",encoding='utf-8-sig') as f:
+            totalArticles = json.load(f)
+        send_email(totalNews,totalArticles)
 
 
-    try:
-        pubmedName1={'name':spreadData['교수님1(네이버)'],'keyword':spreadData['검색어1(PUBMED)'],}
-    except:
-        pubmedName1=""
-    print("pubmedName1:",pubmedName1)
-    if len(pubmedName1['name'])>=1:
-        pubmedList.append(pubmedName1)
-    try:
-        pubmedName2={'name':spreadData['교수님2(PUBMED)'],'keyword':spreadData['검색어2(PUBMED)'],}
-    except:
-        pubmedName2=""
-    print("pubmedName2:",pubmedName2)
-    if len(pubmedName2['name'])>=1:
-        pubmedList.append(pubmedName2)
-    try:
-        pubmedName3={'name':spreadData['교수님3(PUBMED)'],'keyword':spreadData['검색어3(PUBMED)'],}
-    except:
-        pubmedName3=""
-    print("pubmedName3:",pubmedName3)
-    if len(pubmedName3['name'])>=1:
-        pubmedList.append(pubmedName3)
-    try:
-        pubmedName4={'name':spreadData['교수님4(PUBMED)'],'keyword':spreadData['검색어4(PUBMED)'],}
-    except:
-        pubmedName4=""
-    print("pubmedName4:",pubmedName4)
-    if len(pubmedName4['name'])>=1:
-        pubmedList.append(pubmedName4)
-    try:
-        pubmedName5={'name':spreadData['교수님5(PUBMED)'],'keyword':spreadData['검색어5(PUBMED)'],}
-    except:
-        pubmedName5=""
-    print("pubmedName5:",pubmedName5)
-    if len(pubmedName5['name'])>=1:
-        pubmedList.append(pubmedName5)
-
-    totalNews=[]
-    #========뉴스랑 펍메드가져오기
-    for index,inputNews in enumerate(newsList):
-        newsList=GetNews(inputNews)
-        text="{}번째 확인중...".format(index+1)
-        print(text)
-        totalNews.append(newsList)
-        time.sleep(random.randint(10,20)*0.1)
-    totalArticles=[]
-    for index,inputPubmed in enumerate(pubmedList):
-        articleList=GetArticlesPubMed(inputPubmed)
-        text = "{}번째 확인중...".format(index+1)
-        print(text)
-        totalArticles.append(articleList)
-        time.sleep(random.randint(10, 20) * 0.1)
-    with open('totalNews.json', 'w',encoding='utf-8-sig') as f:
-        json.dump(totalNews, f, indent=2,ensure_ascii=False)
-    with open('totalArticles.json', 'w',encoding='utf-8-sig') as f:
-        json.dump(totalArticles, f, indent=2,ensure_ascii=False)
-
-    #==========메일보내기
-    with open ('totalNews.json', "r",encoding='utf-8-sig') as f:
-        totalNews = json.load(f)
-    with open ('totalArticles.json', "r",encoding='utf-8-sig') as f:
-        totalArticles = json.load(f)
-    send_email(totalNews,totalArticles)
+keywordList=GetGoogleSpreadSheet()
+# 크론 표현식으로 함수를 예약합니다. (예: 매일 오후 3시)
+while True:
+    timeNowString=datetime.datetime.now().strftime("%H%M%S")
+    # timeTarget=datetime.datetime.now().strftime("%Y%m%d_{}{}{}".format(keywordList[0]['발송시간'],'00','00'))
+    timeNow=datetime.datetime.now()
+    timeTarget=dt = datetime.datetime(timeNow.year,timeNow.month,timeNow.day,keywordList[0]['송신시간'], 0, 0).strftime("%H%M%S")
+    text="현재:{}/{}".format(timeNowString,timeTarget)
+    print(text)
+    if timeNowString==timeTarget:
+        DoRun()
+    time.sleep(1)
