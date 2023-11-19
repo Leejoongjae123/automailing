@@ -12,7 +12,7 @@ import pprint
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 
-def send_email(totalNews,totalArticles):
+def send_email(totalNews,totalArticles,spreadData):
     # 네이버 SMTP 서버 정보
     smtp_server = 'smtp.naver.com'
     smtp_port = 587  # TLS 포트
@@ -23,7 +23,7 @@ def send_email(totalNews,totalArticles):
 
     # 받는 사람 이메일 주소
     # receiver_email = 'jaeyeon.won@chdpharm.com'
-    receiver_email = 'ljj3347@naver.com'
+    receiver_email = spreadData['메일']
 
     # 이메일 제목과 본문
     timeNow = datetime.datetime.now().strftime("%m월%d일")
@@ -829,7 +829,7 @@ def DoRun():
             totalNews = json.load(f)
         with open ('totalArticles.json', "r",encoding='utf-8-sig') as f:
             totalArticles = json.load(f)
-        send_email(totalNews,totalArticles)
+        send_email(totalNews,totalArticles,spreadData)
 
 
 keywordList=GetGoogleSpreadSheet()
@@ -842,5 +842,6 @@ while True:
     text="현재:{}/{}".format(timeNowString,timeTarget)
     print(text)
     if timeNowString==timeTarget:
+    # if True:
         DoRun()
     time.sleep(1)
