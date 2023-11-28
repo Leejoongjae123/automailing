@@ -1,3 +1,4 @@
+import re
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
@@ -18,8 +19,8 @@ def send_email(totalNews,totalArticles,spreadData):
     smtp_port = 587  # TLS 포트
 
     # 보내는 사람 이메일 주소와 비밀번호
-    sender_email = 'ljj3347@naver.com'
-    sender_password = 'dlwndwo1!'
+    sender_email = '1jaeyeon@naver.com'
+    sender_password = 'ckdduvie!'
 
     # 받는 사람 이메일 주소
     # receiver_email = 'jaeyeon.won@chdpharm.com'
@@ -27,7 +28,7 @@ def send_email(totalNews,totalArticles,spreadData):
 
     # 이메일 제목과 본문
     timeNow = datetime.datetime.now().strftime("%m월%d일")
-    email_subject = '[뉴스레터] {} AI Article'.format(timeNow)
+    email_subject = '[DM팀 뉴스레터] {} AI Article'.format(timeNow)
     newsBody=""
     for indexNews,totalNew in enumerate(totalNews):
         newsContents='<p style="margin: 0;font-weight:bold;">{}){}</p>'.format(indexNews+1,totalNew['name'])
@@ -379,13 +380,20 @@ def send_email(totalNews,totalArticles,spreadData):
                         <td bgcolor="#ffffff">
                             <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                                 <tr>
+                                    <td style="padding: 40px 40px 20px 40px; font-family: sans-serif; font-size: 18px; line-height: 20px; color: #555555; text-align: left; font-weight:bold;">
+                                        <p style="margin: 0;">안녕하세요.</p><br>
+                                        <p style="margin: 0;">DM팀 뉴스 레터 전달 드립니다.</p><br>
+                                        <p style="margin: 0;">Opening Call , DM 품목 디테일에 콜에 활용 부탁드립니다.</p>
+                                    </td>
+                                </tr>
+                                <tr>
                                     <td style="padding: 20px 20px 20px 40px; text-align: left;">
                                         <img class="NHN_MAIL_IMAGE" src="https://aiarticleimage.s3.ap-northeast-2.amazonaws.com/NAVER.png" alt="NAVER.png" data-image-original-width="80" data-image-ratio="1.01" data-image-scale="SCALE_CUSTOM" data-image-border="false width="60" height="60"">
                                     </td>
                                 </tr>
 
                                 <tr>
-                                    <td style="padding: 0px 40px 20px 40px; font-family: sans-serif; font-size: 18px; line-height: 20px; color: #555555; text-align: left; font-weight:bold;">
+                                    <td style="padding: 0px 40px 20px 40px; font-family: sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: left; font-weight:bold;">
                                         <p style="margin: 0;">최근 6개월 간 네이버 뉴스</p>
                                     </td>
                                 </tr>
@@ -419,7 +427,7 @@ def send_email(totalNews,totalArticles,spreadData):
 
                                 <tr>
                                     <td style="padding: 0px 40px 35px 40px; font-family: sans-serif; font-size: 18px; line-height: 20px; color: #555555; text-align: left; font-weight:normal;">
-                                        <p style="font-family: sans-serif; font-size: 18px; line-height: 20px; color: #555555; text-align: left; font-weight:bold;">최근 6개월 간 PUBMED 논문</p>
+                                        <p style="font-family: sans-serif; font-size: 16px; line-height: 20px; color: #555555; text-align: left; font-weight:bold;">최근 6개월 간 PUBMED 논문</p>
                                     </td>
                                 </tr>
                                 {paperBody}
@@ -831,17 +839,40 @@ def DoRun():
             totalArticles = json.load(f)
         send_email(totalNews,totalArticles,spreadData)
 
+def NowYoYil():
+    # 현재 날짜와 시간을 가져옵니다.
+    now = datetime.datetime.now()
+    # 요일을 한글로 변환하는 딕셔너리를 만듭니다.
+    weekday_dict = {
+        0: '월',
+        1: '화',
+        2: '수',
+        3: '목',
+        4: '금',
+        5: '토',
+        6: '일'
+    }
+    # 현재 날짜의 요일을 숫자로 가져옵니다. (월요일은 0, 일요일은 6)
+    today_weekday_number = now.weekday()
+    # 숫자를 한글 요일로 변환합니다.
+    today_weekday_korean = weekday_dict[today_weekday_number]
+    return today_weekday_korean
+
 
 keywordList=GetGoogleSpreadSheet()
-# 크론 표현식으로 함수를 예약합니다. (예: 매일 오후 3시)
+# 함수를 예약합니다. (예: 매일 오후 3시)
 while True:
     timeNowString=datetime.datetime.now().strftime("%H%M%S")
     # timeTarget=datetime.datetime.now().strftime("%Y%m%d_{}{}{}".format(keywordList[0]['발송시간'],'00','00'))
     timeNow=datetime.datetime.now()
-    timeTarget=dt = datetime.datetime(timeNow.year,timeNow.month,timeNow.day,keywordList[0]['송신시간'], 0, 0).strftime("%H%M%S")
-    text="현재:{}/{}".format(timeNowString,timeTarget)
+    regex=re.compile('\d+')
+    sendTimeNumber=regex.findall(keywordList[0]['송신시간'])[0]
+    sendTimeString= re.sub(r"[^가-힣]", "", keywordList[0]['송신시간'])  # 자모가 아닌 한글만 남기기(공백 제거)
+    resultNowYoYil=NowYoYil()
+    timeTarget=dt = datetime.datetime(timeNow.year,timeNow.month,timeNow.day,int(sendTimeNumber), 0, 0).strftime("%H%M%S")
+    text="현재:{}/{}, 송신예약:{}".format(timeNowString,timeTarget,sendTimeString+str(sendTimeNumber))
     print(text)
-    if timeNowString==timeTarget:
-    # if True:
+    # if timeNowString==timeTarget and sendTimeString==resultNowYoYil:
+    if True:
         DoRun()
     time.sleep(1)
