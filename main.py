@@ -870,9 +870,11 @@ while True:
     sendTimeString= re.sub(r"[^가-힣]", "", keywordList[0]['송신시간'])  # 자모가 아닌 한글만 남기기(공백 제거)
     resultNowYoYil=NowYoYil()
     timeTarget=dt = datetime.datetime(timeNow.year,timeNow.month,timeNow.day,int(sendTimeNumber), 0, 0).strftime("%H%M%S")
-    text="현재:{}/{}, 송신예약:{}".format(timeNowString,timeTarget,sendTimeString+str(sendTimeNumber))
+    text="시간:{}/{},요일:{}/{}, 송신예약:{}".format(timeNowString,timeTarget,sendTimeString,resultNowYoYil,sendTimeString+str(sendTimeNumber))
     print(text)
+
     # if timeNowString==timeTarget and sendTimeString==resultNowYoYil:
-    if True:
+    if timeNowString==timeTarget:
+    # if True:
         DoRun()
     time.sleep(1)
