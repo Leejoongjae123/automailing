@@ -383,7 +383,7 @@ def send_email(totalNews,totalArticles,spreadData):
                                     <td style="padding: 40px 40px 20px 40px; font-family: sans-serif; font-size: 18px; line-height: 20px; color: #555555; text-align: left; font-weight:bold;">
                                         <p style="margin: 0;">안녕하세요.</p><br>
                                         <p style="margin: 0;">DM팀 뉴스 레터 전달 드립니다.</p><br>
-                                        <p style="margin: 0;">Opening Call , DM 품목 디테일에 콜에 활용 부탁드립니다.</p>
+                                        <p style="margin: 0;">Opening Call , DM 품목 디테일 콜에 활용 부탁 드립니다.</p>
                                     </td>
                                 </tr>
                                 <tr>
@@ -722,6 +722,7 @@ def GetGoogleSpreadSheet():
     sheet_url = 'https://docs.google.com/spreadsheets/d/1UTuXepWAxTeeZUMKGDI8Gd8U1cXYyEQKLLXUUumZma4/edit#gid=0'
     doc = gc.open_by_url(sheet_url)
     worksheet = doc.worksheet('시트1')
+    print(worksheet)
     #=================특정행의 정보 가져오기
     # cell_data = worksheet.acell('A1').value
     #=================전체정보가져오기
@@ -735,7 +736,14 @@ def GetGoogleSpreadSheet():
 
 def DoRun():
     #=========구글시트정보가져오기
-    spreadDatas=GetGoogleSpreadSheet()
+    while True:
+        try:
+            spreadDatas=GetGoogleSpreadSheet()
+            break
+        except:
+            print("구글스프레드에러")
+            time.sleep(60)
+
     for spreadData in spreadDatas:
         newsList = []
         pubmedList = []
@@ -859,7 +867,14 @@ def NowYoYil():
     return today_weekday_korean
 
 
-keywordList=GetGoogleSpreadSheet()
+while True:
+    try:
+        keywordList = GetGoogleSpreadSheet()
+        break
+    except:
+        print("구글스프레드에러")
+        time.sleep(60)
+
 # 함수를 예약합니다. (예: 매일 오후 3시)
 while True:
     timeNowString=datetime.datetime.now().strftime("%H%M%S")
@@ -874,7 +889,7 @@ while True:
     print(text)
 
     # if timeNowString==timeTarget and sendTimeString==resultNowYoYil:
-    if timeNowString==timeTarget:
-    # if True:
+    # if timeNowString==timeTarget:
+    if True:
         DoRun()
     time.sleep(1)

@@ -1,23 +1,75 @@
 ﻿[
   {
-    "name": "박성지 교수님",
+    "name": "당뇨",
+    "keyword": "DPP4",
+    "news": [
+      {
+        "title": "\"당 배출·분해 한번에\"···대웅제약, '1+1' 당뇨병 치료 복합제 개발 한다",
+        "url": "https://www.dailian.co.kr/news/view/1300689/?sc=Naver"
+      },
+      {
+        "title": "[제약업계 소식] 11월 29일",
+        "url": "http://www.doctorstimes.com/news/articleView.html?idxno=225078"
+      },
+      {
+        "title": "당 분해하며 배출까지…당뇨 정복 위해 국산 신약 뭉쳤다",
+        "url": "https://www.sedaily.com/NewsView/29XFA6FJ2R"
+      },
+      {
+        "title": "대웅제약 “엔블로 패밀리 전략으로 당뇨병 시장 리딩”",
+        "url": "https://jhealthmedia.joins.com/article/article_view.asp?pno=27466"
+      },
+      {
+        "title": "국내 제약사, 당뇨 병용요법 주력…신규 복합제 잇따라 개발",
+        "url": "http://www.metroseoul.co.kr/article/20231129500619"
+      }
+    ]
+  },
+  {
+    "name": "SGLT2",
+    "keyword": "TZD",
+    "news": [
+      {
+        "title": "제일약품 ‘듀글로우’ 내달 급여권 진입…‘SGLT-2i+TZD’ 복합제 경쟁 예고",
+        "url": "https://mdtoday.co.kr/news/view/1065598613674848"
+      },
+      {
+        "title": "제일약품, 내달 SGLT-2i+TZD 복합제 시장 합류",
+        "url": "https://www.medipana.com/article/view.php?news_idx=319689&sch_cate=D"
+      },
+      {
+        "title": "국내 제약사, 당뇨 병용요법 주력…신규 복합제 잇따라 개발",
+        "url": "http://www.metroseoul.co.kr/article/20231129500619"
+      },
+      {
+        "title": "SGLT-2i+TZD '듀글로우' 급여 등재… 트루버디 이어 2번 주자",
+        "url": "http://www.hitnews.co.kr/news/articleView.html?idxno=50145"
+      },
+      {
+        "title": "Jeil Pharma's Duglow Breakthrough in Diabetes Reimbursement",
+        "url": "http://www.hitnews.co.kr/news/articleView.html?idxno=50248"
+      }
+    ]
+  },
+  {
+    "name": "GLP-1",
     "keyword": "자누비아",
     "news": [
+      {
+        "title": "기술수출 한방, 종근당 영업익 2000억원도 '거뜬'",
+        "url": "http://moneys.mt.co.kr/news/mwView.php?no=2023112909325257947"
+      },
+      {
+        "title": "국내 제약사, 당뇨 병용요법 주력…신규 복합제 잇따라 개발",
+        "url": "http://www.metroseoul.co.kr/article/20231129500619"
+      },
       {
         "title": "밀어낼 땐 언제고, 안판다고? 쌓여가는 '자누비아 제네릭들'",
         "url": "http://www.hitnews.co.kr/news/articleView.html?idxno=49896"
       },
       {
-        "title": "키움증권 “종근당, 자누비아 특허 만료 등으로 내년 성장 둔화 예상”",
-        "url": "https://mydaily.co.kr/page/view/2023103008555752515"
-      },
-      {
         "title": "36호 신약 엔블로, 오픈 이노베이션 성공 요인은?",
         "url": "http://www.yakup.com/news/index.html?mode=view&cat=12&nid=287490"
-      },
-      {
-        "title": "“종근당, 예상보다 빠른 자누비아 매출 감소…투자의견·목표가 동시 하향”",
-        "url": "https://www.etoday.co.kr/news/view/2297120"
       },
       {
         "title": "5대 제약사 3분기 만에 매출 1조원...“개량·복합신약의 힘”",
@@ -26,80 +78,54 @@
     ]
   },
   {
-    "name": "김지훈 교수님",
-    "keyword": "자누비아",
+    "name": "듀비에",
+    "keyword": "엑시글루",
     "news": [
       {
-        "title": "밀어낼 땐 언제고, 안판다고? 쌓여가는 '자누비아 제네릭들'",
-        "url": "http://www.hitnews.co.kr/news/articleView.html?idxno=49896"
+        "title": "\"엑시글루S, 심장·신질환 환자에 사용가능한 최적 치료옵션\"",
+        "url": "http://www.hitnews.co.kr/news/articleView.html?idxno=48116"
       },
       {
-        "title": "키움증권 “종근당, 자누비아 특허 만료 등으로 내년 성장 둔화 예상”",
-        "url": "https://mydaily.co.kr/page/view/2023103008555752515"
+        "title": "병용급여 확대에도...'DPP4+SGLT2' 복합제 시장 '잠잠'",
+        "url": "http://www.dailypharm.com/Users/News/NewsView.html?ID=305065&REFERER=NP"
       },
       {
-        "title": "36호 신약 엔블로, 오픈 이노베이션 성공 요인은?",
-        "url": "http://www.yakup.com/news/index.html?mode=view&cat=12&nid=287490"
+        "title": "\"다파+시타 조합, 상호보완 기전으로 혈당조절·체중감소 효과\"",
+        "url": "http://www.hitnews.co.kr/news/articleView.html?idxno=49191"
       },
       {
-        "title": "“종근당, 예상보다 빠른 자누비아 매출 감소…투자의견·목표가 동시 하향”",
-        "url": "https://www.etoday.co.kr/news/view/2297120"
+        "title": "종근당, 강력한 제품 라인업으로 당뇨 시장 이끈다",
+        "url": "http://www.bosa.co.kr/news/articleView.html?idxno=2206736"
       },
       {
-        "title": "5대 제약사 3분기 만에 매출 1조원...“개량·복합신약의 힘”",
-        "url": "https://biz.chosun.com/science-chosun/bio/2023/11/03/P7CYXT6HXZA7XOZFYMOS222NDI/?utm_source=naver&utm_medium=original&utm_campaign=biz"
+        "title": "경쟁 시작한 DPP-4·SGLT-2i 당뇨 복합제...큐턴·제미다파 초반 선두",
+        "url": "http://www.hitnews.co.kr/news/articleView.html?idxno=47156"
       }
     ]
   },
   {
-    "name": "김형준 교수님",
-    "keyword": "자누비아",
+    "name": "큐시미아",
+    "keyword": "신약",
     "news": [
       {
-        "title": "밀어낼 땐 언제고, 안판다고? 쌓여가는 '자누비아 제네릭들'",
-        "url": "http://www.hitnews.co.kr/news/articleView.html?idxno=49896"
+        "title": "셀트리온헬스케어, 신약 ‘짐펜트라’ 내년 2월 미국 출시 확정",
+        "url": "https://www.news1.kr/articles/5246909"
       },
       {
-        "title": "키움증권 “종근당, 자누비아 특허 만료 등으로 내년 성장 둔화 예상”",
-        "url": "https://mydaily.co.kr/page/view/2023103008555752515"
+        "title": "\"전통 제약사서 신약개발 기업으로\"… 종근당 기술수출 잭폿",
+        "url": "http://moneys.mt.co.kr/news/mwView.php?no=2023112908064520392"
       },
       {
-        "title": "36호 신약 엔블로, 오픈 이노베이션 성공 요인은?",
-        "url": "http://www.yakup.com/news/index.html?mode=view&cat=12&nid=287490"
+        "title": "당 분해하며 배출까지…당뇨 정복 위해 국산 신약 뭉쳤다",
+        "url": "https://www.sedaily.com/NewsView/29XFA6FJ2R"
       },
       {
-        "title": "“종근당, 예상보다 빠른 자누비아 매출 감소…투자의견·목표가 동시 하향”",
-        "url": "https://www.etoday.co.kr/news/view/2297120"
+        "title": "올릭스 \"황반변성 신약, 미국 1상 중간결과 안전성 확보\"",
+        "url": "http://www.newsis.com/view/?id=NISX20231129_0002540033&cID=10434&pID=13200"
       },
       {
-        "title": "5대 제약사 3분기 만에 매출 1조원...“개량·복합신약의 힘”",
-        "url": "https://biz.chosun.com/science-chosun/bio/2023/11/03/P7CYXT6HXZA7XOZFYMOS222NDI/?utm_source=naver&utm_medium=original&utm_campaign=biz"
-      }
-    ]
-  },
-  {
-    "name": "김형준 교수님",
-    "keyword": "자누비아",
-    "news": [
-      {
-        "title": "밀어낼 땐 언제고, 안판다고? 쌓여가는 '자누비아 제네릭들'",
-        "url": "http://www.hitnews.co.kr/news/articleView.html?idxno=49896"
-      },
-      {
-        "title": "키움증권 “종근당, 자누비아 특허 만료 등으로 내년 성장 둔화 예상”",
-        "url": "https://mydaily.co.kr/page/view/2023103008555752515"
-      },
-      {
-        "title": "36호 신약 엔블로, 오픈 이노베이션 성공 요인은?",
-        "url": "http://www.yakup.com/news/index.html?mode=view&cat=12&nid=287490"
-      },
-      {
-        "title": "“종근당, 예상보다 빠른 자누비아 매출 감소…투자의견·목표가 동시 하향”",
-        "url": "https://www.etoday.co.kr/news/view/2297120"
-      },
-      {
-        "title": "5대 제약사 3분기 만에 매출 1조원...“개량·복합신약의 힘”",
-        "url": "https://biz.chosun.com/science-chosun/bio/2023/11/03/P7CYXT6HXZA7XOZFYMOS222NDI/?utm_source=naver&utm_medium=original&utm_campaign=biz"
+        "title": "UK바이오뱅크 신규 데이터 공개…\"신약개발 보물창고 열렸다\"",
+        "url": "https://www.hankyung.com/article/202311303897i"
       }
     ]
   }
