@@ -33,7 +33,7 @@ def send_email(totalNews,totalArticles,spreadData):
     for indexNews,totalNew in enumerate(totalNews):
         newsContents='<p style="margin: 0;font-weight:bold;">{}){}</p>'.format(indexNews+1,totalNew['name'])
         for index,news in enumerate(totalNew['news']):
-            newsContents=newsContents+'<p style="margin: 0; padding: 10px 0px 0px 10px;font-size: 14px"><a href={}>{}</a></p>'.format(news['url'],news['title'])
+            newsContents=newsContents+'<p style="margin: 0; padding: 10px 0px 0px 10px;font-size: 14px"><a href={}>{}</a><span style="margin: 0; padding: 10px 0px 0px 10px;font-size: 14px">{}</span></p>'.format(news['url'],news['title'],news['regiDate'])
 
         newsBody = newsBody + '''
                     <tr>
@@ -547,7 +547,32 @@ def send_email(totalNews,totalArticles,spreadData):
 
     print("이메일이 성공적으로 보내졌습니다.")
 
-
+def GetDate(relative_time):
+    current_time = datetime.datetime.now()
+    if relative_time.find('주')>=0:
+        weeks_ago = int(re.findall(r'\d+', relative_time)[0])
+        print("weeks_ago:",weeks_ago,"/ weeks_ago_TYPE:",type(weeks_ago))
+        current_time -= datetime.timedelta(weeks=weeks_ago)
+        current_time=current_time.strftime("%Y.%m.%d")
+    elif relative_time.find('일') >= 0:
+        days_ago = int(re.findall(r'\d+', relative_time)[0])
+        print("days_ago:",days_ago,"/ days_ago_TYPE:",type(days_ago))
+        current_time -= datetime.timedelta(days=days_ago)
+        current_time = current_time.strftime("%Y.%m.%d")
+    elif relative_time.find('분') >= 0:
+        minutes_ago = int(re.findall(r'\d+', relative_time)[0])
+        print("minutes_ago:",minutes_ago,"/ minutes_ago_TYPE:",type(minutes_ago))
+        current_time -= datetime.timedelta(minutes=minutes_ago)
+        current_time = current_time.strftime("%Y.%m.%d")
+    elif relative_time.find('시간') >= 0:
+        hours_ago = int(re.findall(r'\d+', relative_time)[0])
+        print("hours_ago:",hours_ago,"/ hours_ago_TYPE:",type(hours_ago))
+        current_time -= datetime.timedelta(hours=hours_ago)
+        current_time = current_time.strftime("%Y.%m.%d")
+    else:
+        current_time=relative_time
+    print("계산된 날짜:", current_time)
+    return current_time
 # 이메일 보내기 함수 호출
 def GetArticlesPubMed(inputData):
     cookies = {
@@ -702,14 +727,27 @@ def GetNews(inputData):
     articles=articles[:5]
     resultList=[]
     for article in articles:
+
         title=article.find('a',attrs={'class':'news_tit'}).get_text()
         print("title:",title,"/ title_TYPE:",type(title),len(title))
         url=article.find('a',attrs={'class':'news_tit'})['href']
         print("url:",url,"/ url_TYPE:",type(url),len(url))
-        data={'title':title,'url':url}
+
+        try:
+            regiDate=article.find_all('span',attrs={'class':'info'})[-1].get_text().strip()
+            regiDate=GetDate(regiDate)
+        except:
+            regiDate=""
+        print("regiDate:",regiDate)
+
+        data={'title':title,'url':url,'regiDate':regiDate}
         resultList.append(data)
-    inputData.update({'news':resultList})    
-    pprint.pprint(inputData)
+
+    # 데이터를 'regiDate' 키값을 기준으로 최신 순으로 정렬
+    resultList = sorted(resultList, key=lambda x: x["regiDate"], reverse=True)
+
+    inputData.update({'news':resultList})
+
     return inputData
 
 
@@ -889,7 +927,7 @@ while True:
     print(text)
 
     # if timeNowString==timeTarget and sendTimeString==resultNowYoYil:
-    # if timeNowString==timeTarget:
-    if True:
+    if timeNowString==timeTarget:
+    # if True:
         DoRun()
     time.sleep(1)

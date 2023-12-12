@@ -1,48 +1,106 @@
 ﻿[
   {
-    "name": "당뇨",
-    "keyword": "Jaehyuk Lee",
+    "name": "정창희 교수님",
+    "keyword": "jung chang hee",
     "research": [
       {
-        "title": "Characteristics of muscle synergy extracted using an autoencoder in patients with stroke during the curved walking in comparison with healthy controls.",
-        "url": "https://pubmed.ncbi.nlm.nih.gov//37845133/",
-        "paper": "Gait Posture. 2023 Oct 6:S0966-6362(23)01455-8. "
+        "title": "The Cardiovascular Effect of Tirzepatide: A Glucagon-Like Peptide-1 and Glucose-Dependent Insulinotropic Polypeptide Dual Agonist.",
+        "url": "https://pubmed.ncbi.nlm.nih.gov//37800107/",
+        "paper": "J Lipid Atheroscler. 2023 Sep;12(3):213-222. "
       },
       {
-        "title": "Precise Filtration of Chronic Myeloid Leukemia Cells by an Ultrathin Microporous Membrane with Backflushing to Minimize Fouling.",
-        "url": "https://pubmed.ncbi.nlm.nih.gov//37623768/",
-        "paper": "Membranes (Basel). 2023 Jul 29;13(8):707. "
+        "title": "Preserved Muscle Strength Despite Muscle Mass Loss After Bariatric Metabolic Surgery: a Systematic Review and Meta-analysis.",
+        "url": "https://pubmed.ncbi.nlm.nih.gov//37728838/",
+        "paper": "Obes Surg. 2023 Nov;33(11):3422-3430. "
       },
       {
-        "title": "A Novel Interaction between MFN2/Marf and MARK4/PAR-1 Is Implicated in Synaptic Defects and Mitochondrial Dysfunction.",
-        "url": "https://pubmed.ncbi.nlm.nih.gov//37550059/",
-        "paper": "eNeuro. 2023 Aug 18;10(8):ENEURO.0409-22.2023. "
+        "title": "Predictive value of the Framingham steatosis index for cardiovascular risk: a nationwide population-based cohort study.",
+        "url": "https://pubmed.ncbi.nlm.nih.gov//37534274/",
+        "paper": "Front Cardiovasc Med. 2023 Jul 18;10:1163052. "
       }
     ]
   },
   {
-    "name": "조재형 교수님",
-    "keyword": "Jaehyung Jo",
-    "research": []
-  },
-  {
-    "name": "박철영 교수님",
-    "keyword": "Cheol-Young Park",
+    "name": "강성훈 교수님",
+    "keyword": "kang sung hoon",
     "research": [
       {
-        "title": "Evaluation of adrenal masses using 18F-FDOPA PET/CT in patients suspected with pheochromocytoma.",
-        "url": "https://pubmed.ncbi.nlm.nih.gov//37901929/",
-        "paper": "Nucl Med Commun. 2023 Oct 30. "
+        "title": "Effect of Tablet-based Cognitive Intervention on Cognition in Patients With Mild Cognitive Impairment: A Pilot Study.",
+        "url": "https://pubmed.ncbi.nlm.nih.gov//38025410/",
+        "paper": "Dement Neurocogn Disord. 2023 Oct;22(4):130-138. "
       },
       {
-        "title": "Coronary Artery Calcium Score as a Sensitive Indicator of Cardiovascular Disease in Patients with Type 2 Diabetes Mellitus: A Long-Term Cohort Study.",
-        "url": "https://pubmed.ncbi.nlm.nih.gov//37816500/",
-        "paper": "Endocrinol Metab (Seoul). 2023 Oct;38(5):568-577. "
+        "title": "Distinct effects of cholesterol profile components on amyloid and vascular burdens.",
+        "url": "https://pubmed.ncbi.nlm.nih.gov//37950256/",
+        "paper": "Alzheimers Res Ther. 2023 Nov 10;15(1):197. "
       },
       {
-        "title": "Efficacy and Safety of Evogliptin Add-on Therapy to Dapagliflozin/Metformin Combinations in Patients with Poorly Controlled Type 2 Diabetes Mellitus: A 24-Week Multicenter Randomized Placebo-Controlled Parallel-Design Phase-3 Trial with a 28-Week Extension.",
-        "url": "https://pubmed.ncbi.nlm.nih.gov//37750183/",
-        "paper": "Diabetes Metab J. 2023 Sep 26. "
+        "title": "Sex-specific relationship between non-alcoholic fatty liver disease and amyloid-β in cognitively unimpaired individuals.",
+        "url": "https://pubmed.ncbi.nlm.nih.gov//37901792/",
+        "paper": "Front Aging Neurosci. 2023 Oct 13;15:1277392. "
+      }
+    ]
+  },
+  {
+    "name": "조윤경 교수님",
+    "keyword": "Yun Kyung Cho",
+    "research": [
+      {
+        "title": "The Cardiovascular Effect of Tirzepatide: A Glucagon-Like Peptide-1 and Glucose-Dependent Insulinotropic Polypeptide Dual Agonist.",
+        "url": "https://pubmed.ncbi.nlm.nih.gov//37800107/",
+        "paper": "J Lipid Atheroscler. 2023 Sep;12(3):213-222. "
+      },
+      {
+        "title": "Preserved Muscle Strength Despite Muscle Mass Loss After Bariatric Metabolic Surgery: a Systematic Review and Meta-analysis.",
+        "url": "https://pubmed.ncbi.nlm.nih.gov//37728838/",
+        "paper": "Obes Surg. 2023 Nov;33(11):3422-3430. "
+      },
+      {
+        "title": "Cholecystectomy increases the risk of metabolic syndrome in the Korean population: a longitudinal cohort study.",
+        "url": "https://pubmed.ncbi.nlm.nih.gov//37600984/",
+        "paper": "Hepatobiliary Surg Nutr. 2023 Aug 1;12(4):523-533. "
+      }
+    ]
+  },
+  {
+    "name": "이우제 교수님",
+    "keyword": "Woo Je Lee",
+    "research": [
+      {
+        "title": "Preserved Muscle Strength Despite Muscle Mass Loss After Bariatric Metabolic Surgery: a Systematic Review and Meta-analysis.",
+        "url": "https://pubmed.ncbi.nlm.nih.gov//37728838/",
+        "paper": "Obes Surg. 2023 Nov;33(11):3422-3430. "
+      },
+      {
+        "title": "Glucometabolic control of once-weekly dulaglutide switched from DPP4 inhibitor versus daily empagliflozin add-on in patients with type 2 diabetes inadequately controlled with metformin, sulfonylurea, and DPP4 inhibitor: A randomised trial.",
+        "url": "https://pubmed.ncbi.nlm.nih.gov//37595844/",
+        "paper": "Diabetes Res Clin Pract. 2023 Sep;203:110884. "
+      },
+      {
+        "title": "Predictive value of the Framingham steatosis index for cardiovascular risk: a nationwide population-based cohort study.",
+        "url": "https://pubmed.ncbi.nlm.nih.gov//37534274/",
+        "paper": "Front Cardiovasc Med. 2023 Jul 18;10:1163052. "
+      }
+    ]
+  },
+  {
+    "name": "김민선 교수님",
+    "keyword": " Myung Jin Kim",
+    "research": [
+      {
+        "title": "Preserved Muscle Strength Despite Muscle Mass Loss After Bariatric Metabolic Surgery: a Systematic Review and Meta-analysis.",
+        "url": "https://pubmed.ncbi.nlm.nih.gov//37728838/",
+        "paper": "Obes Surg. 2023 Nov;33(11):3422-3430. "
+      },
+      {
+        "title": "Classification of Skeletal Phenotypes of Adult Patients With Cleft Skeletal Class III Malocclusion Using Principal Component Analysis and Cluster Analysis.",
+        "url": "https://pubmed.ncbi.nlm.nih.gov//37449576/",
+        "paper": "J Craniofac Surg. 2023 Nov-Dec 01;34(8):2297-2301. "
+      },
+      {
+        "title": "Association Between Insulin Resistance and Myosteatosis Measured by Abdominal Computed Tomography.",
+        "url": "https://pubmed.ncbi.nlm.nih.gov//37401630/",
+        "paper": "J Clin Endocrinol Metab. 2023 Nov 17;108(12):3100-3110. "
       }
     ]
   }
