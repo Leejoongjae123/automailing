@@ -697,7 +697,7 @@ def GetNews(inputData):
         'where': 'news',
         'query': inputData['keyword'],
         'sm': 'tab_opt',
-        'sort': '0',
+        'sort': '1',
         'photo': '0',
         'field': '0',
         'pd': '6',
@@ -783,6 +783,7 @@ def DoRun():
             time.sleep(60)
 
     for spreadData in spreadDatas:
+        pprint.pprint(spreadData)
         newsList = []
         pubmedList = []
         try:
@@ -823,7 +824,7 @@ def DoRun():
 
 
         try:
-            pubmedName1={'name':spreadData['교수님1(네이버)'],'keyword':spreadData['검색어1(PUBMED)'],}
+            pubmedName1={'name':spreadData['교수님1(PUBMED)'],'keyword':spreadData['검색어1(PUBMED)'],}
         except:
             pubmedName1=""
         print("pubmedName1:",pubmedName1)
@@ -930,4 +931,5 @@ while True:
     if timeNowString==timeTarget:
     # if True:
         DoRun()
+    # break
     time.sleep(1)
