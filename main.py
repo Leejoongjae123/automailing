@@ -927,8 +927,9 @@ while True:
     text="시간:{}/{},요일:{}/{}, 송신예약:{}".format(timeNowString,timeTarget,sendTimeString,resultNowYoYil,sendTimeString+str(sendTimeNumber))
     print(text)
 
-    # if timeNowString==timeTarget and sendTimeString==resultNowYoYil:
-    if timeNowString==timeTarget:
+    if timeNowString==timeTarget and sendTimeString==resultNowYoYil:
+    # if sendTimeString==resultNowYoYil:
+    # if timeNowString==timeTarget:
     # if True:
         DoRun()
     # break
