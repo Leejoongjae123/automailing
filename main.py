@@ -48,8 +48,9 @@ def send_email(totalNews,totalArticles,spreadData):
 
     paperBody=""
     print("totalArticles:",totalArticles,"/ totalArticles_TYPE:",type(totalArticles),len(totalArticles))
+    paperContents=""
     for indexTotal,totalArticle in enumerate(totalArticles):
-        paperContents=""
+        paperContents = ""
         for index,paper in enumerate(totalArticle['research']):
             paperContents=paperContents+'''
             <a href='{}'>{}</a><br>
@@ -79,7 +80,7 @@ def send_email(totalNews,totalArticles,spreadData):
                     </tr>                
                     '''.format(indexTotal+1,totalArticle['name'], paperContents)
 
-    print("paperContents:",paperContents,"/ paperContents_TYPE:",type(paperContents),len(paperContents))
+    print("paperContents:",paperContents,"/ paperContents_TYPE:",type(paperContents))
 
 
 
@@ -768,8 +769,8 @@ def GetGoogleSpreadSheet():
     #==================맨 밑행에 데이타 넣기
     # new_row = ['John', 30, 'Teacher']
     # worksheet.append_row(new_row)
-    pprint.pprint(all_data)
-    return all_data
+    filtered_data = [item for item in all_data if any(value != '' for value in item.values())]
+    return filtered_data
 
 
 def DoRun():
@@ -869,7 +870,14 @@ def DoRun():
             time.sleep(random.randint(10,20)*0.1)
         totalArticles=[]
         for index,inputPubmed in enumerate(pubmedList):
-            articleList=GetArticlesPubMed(inputPubmed)
+            while True:
+                try:
+                    articleList=GetArticlesPubMed(inputPubmed)
+                    print("펍메드완료")
+                    break
+                except:
+                    print("펍메드실패")
+                    time.sleep(10)
             text = "{}번째 확인중...".format(index+1)
             print(text)
             totalArticles.append(articleList)
@@ -884,7 +892,10 @@ def DoRun():
             totalNews = json.load(f)
         with open ('totalArticles.json', "r",encoding='utf-8-sig') as f:
             totalArticles = json.load(f)
+
         send_email(totalNews,totalArticles,spreadData)
+        print("=========================================")
+
 
 def NowYoYil():
     # 현재 날짜와 시간을 가져옵니다.
@@ -932,5 +943,4 @@ while True:
     # if timeNowString==timeTarget:
     # if True:
         DoRun()
-    # break
     time.sleep(1)
