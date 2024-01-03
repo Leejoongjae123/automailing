@@ -925,6 +925,8 @@ while True:
         print("구글스프레드에러")
         time.sleep(60)
 
+
+firstFlag=True
 # 함수를 예약합니다. (예: 매일 오후 3시)
 while True:
     timeNowString=datetime.datetime.now().strftime("%H%M%S")
@@ -938,9 +940,10 @@ while True:
     text="시간:{}/{},요일:{}/{}, 송신예약:{}".format(timeNowString,timeTarget,sendTimeString,resultNowYoYil,sendTimeString+str(sendTimeNumber))
     print(text)
 
-    if timeNowString==timeTarget and sendTimeString==resultNowYoYil:
+    if (timeNowString==timeTarget and sendTimeString==resultNowYoYil) or firstFlag==True:
     # if sendTimeString==resultNowYoYil:
     # if timeNowString==timeTarget:
     # if True:
         DoRun()
+        firstFlag=False
     time.sleep(1)
